@@ -1,6 +1,6 @@
 variable "common_tags" {
   description = "This is to help you add tags to your cloud objects"
-  type        = map
+  type        = map(any)
 }
 
 variable "es_security_group_names" {
@@ -16,7 +16,7 @@ variable "security_group_names" {
 }
 
 variable "cluster" {
-  type = map
+  type = map(any)
   default = {
     cluster_id           = "cluster-example"
     engine               = "memcached"

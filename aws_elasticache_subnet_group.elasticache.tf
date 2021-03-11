@@ -10,6 +10,6 @@ variable "es_subnet_group_name" {
 }
 
 variable "subnet_ids" {
-  type    = list
+  type    = list(any)
   default = [""]
 }
