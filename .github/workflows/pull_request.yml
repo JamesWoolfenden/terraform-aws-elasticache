@@ -42,7 +42,6 @@ jobs:
       - run: |
           pip3 install lastversion
           now=$(lastversion terraform-docs)
-          echo "terraform-docs Version $now"
           mkdir $GITHUB_WORKSPACE/bin
           curl -Lo $GITHUB_WORKSPACE/bin/terraform-docs https://github.com/terraform-docs/terraform-docs/releases/download/v${{ now }}/terraform-docs-v${{ now }}-$(uname)-amd64
           chmod +x $GITHUB_WORKSPACE/bin/terraform-docs
