@@ -60,38 +60,38 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [aws_elasticache_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster) |
-| [aws_elasticache_parameter_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_parameter_group) |
-| [aws_elasticache_replication_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_replication_group) |
-| [aws_elasticache_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_security_group) |
-| [aws_elasticache_subnet_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_subnet_group) |
+| Name | Type |
+|------|------|
+| [aws_elasticache_cluster.cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster) | resource |
+| [aws_elasticache_parameter_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_parameter_group) | resource |
+| [aws_elasticache_replication_group.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_replication_group) | resource |
+| [aws_elasticache_security_group.elasticache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_security_group) | resource |
+| [aws_elasticache_subnet_group.elasticache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_subnet_group) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| auth\_token | (optional) describe your variable | `string` | n/a | yes |
-| cluster | n/a | `map(any)` | <pre>{<br>  "cluster_id": "cluster-example",<br>  "engine": "memcached",<br>  "node_type": "cache.m4.large",<br>  "num_cache_nodes": 2,<br>  "parameter_group_name": "default.memcached1.4",<br>  "port": 11211<br>}</pre> | no |
-| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| es\_security\_group\_names | elasticache-security-group | `string` | `"elasticache-security-group"` | no |
-| es\_subnet\_group\_name | es\_subnet\_group\_name | `string` | `"tf-test-cache-subnet"` | no |
-| replication\_group | n/a | `map` | <pre>{<br>  "automatic_failover_enabled": true,<br>  "availability_zones": [<br>    "us-west-2a",<br>    "us-west-2b"<br>  ],<br>  "node_type": "cache.m4.large",<br>  "number_cache_clusters": 2,<br>  "parameter_group_name": "default.redis3.2",<br>  "port": 6379,<br>  "replication_group_description": "test description",<br>  "replication_group_id": "tf-rep-group-1"<br>}</pre> | no |
-| security\_group\_names | elasticache-security-group | `string` | `"default"` | no |
-| subnet\_ids | n/a | `list(any)` | <pre>[<br>  ""<br>]</pre> | no |
+| <a name="input_auth_token"></a> [auth\_token](#input\_auth\_token) | (optional) describe your variable | `string` | n/a | yes |
+| <a name="input_cluster"></a> [cluster](#input\_cluster) | n/a | `map(any)` | <pre>{<br>  "cluster_id": "cluster-example",<br>  "engine": "memcached",<br>  "node_type": "cache.m4.large",<br>  "num_cache_nodes": 2,<br>  "parameter_group_name": "default.memcached1.4",<br>  "port": 11211,<br>  "snapshot_retention_limit": "5"<br>}</pre> | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_es_security_group_names"></a> [es\_security\_group\_names](#input\_es\_security\_group\_names) | elasticache-security-group | `string` | `"elasticache-security-group"` | no |
+| <a name="input_es_subnet_group_name"></a> [es\_subnet\_group\_name](#input\_es\_subnet\_group\_name) | es\_subnet\_group\_name | `string` | `"tf-test-cache-subnet"` | no |
+| <a name="input_replication_group"></a> [replication\_group](#input\_replication\_group) | n/a | `map` | <pre>{<br>  "automatic_failover_enabled": true,<br>  "availability_zones": [<br>    "us-west-2a",<br>    "us-west-2b"<br>  ],<br>  "node_type": "cache.m4.large",<br>  "number_cache_clusters": 2,<br>  "parameter_group_name": "default.redis3.2",<br>  "port": 6379,<br>  "replication_group_description": "test description",<br>  "replication_group_id": "tf-rep-group-1"<br>}</pre> | no |
+| <a name="input_security_group_names"></a> [security\_group\_names](#input\_security\_group\_names) | elasticache-security-group | `string` | `"default"` | no |
+| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | n/a | `list(any)` | <pre>[<br>  ""<br>]</pre> | no |
 
 ## Outputs
 
-No output.
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
