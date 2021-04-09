@@ -43,7 +43,7 @@ jobs:
           pip3 install lastversion
           now=$(lastversion terraform-docs)
           mkdir $GITHUB_WORKSPACE/bin
-          curl -Lo $GITHUB_WORKSPACE/bin/terraform-docs https://github.com/terraform-docs/terraform-docs/releases/download/v${{ now }}/terraform-docs-v${{ now }}-$(uname)-amd64
+          curl -Lo $GITHUB_WORKSPACE/bin/terraform-docs https://github.com/terraform-docs/terraform-docs/releases/download/v${now}/terraform-docs-v${{ now }}-$(uname)-amd64
           chmod +x $GITHUB_WORKSPACE/bin/terraform-docs
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
       - uses: pre-commit/action@v2.0.0
