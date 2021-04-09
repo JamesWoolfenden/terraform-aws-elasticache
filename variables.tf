@@ -3,18 +3,6 @@ variable "common_tags" {
   type        = map(any)
 }
 
-variable "es_security_group_names" {
-  type        = string
-  description = "elasticache-security-group"
-  default     = "elasticache-security-group"
-}
-
-variable "security_group_names" {
-  type        = string
-  description = "elasticache-security-group"
-  default     = "default"
-}
-
 variable "cluster" {
   type = map(any)
   default = {

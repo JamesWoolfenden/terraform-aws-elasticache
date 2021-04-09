@@ -1,0 +1,10 @@
+[AWS003][ERROR] Resource 'module.elasticache:aws_elasticache_security_group.elasticache' uses EC2 Classic. Use a VPC instead.
+
+ElastiCache Security Groups are for use only when working with an ElastiCache cluster outside of a VPC. If you are using a VPC, see the ElastiCache Subnet Group resource.
+
+
+        Description    :        ElastiCache for Memcached is not in use in AWS PCI DSS environments
+        File           :        ..\..\aws_elasticcache_cluster.cluster.tf
+        Line           :        1
+        Severity       :        HIGH
+        -----------------------------------------------------------------------
