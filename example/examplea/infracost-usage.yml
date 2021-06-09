@@ -1,2 +1,4 @@
 version: 0.1
 resource_usage:
+  module.elasticache.aws_elasticache_cluster.cluster:
+    snapshot_storage_size_gb: 0
