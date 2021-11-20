@@ -15,3 +15,7 @@ variable "cluster" {
     snapshot_retention_limit = "5"
   }
 }
+
+variable "kms_key_id" {
+
+}
