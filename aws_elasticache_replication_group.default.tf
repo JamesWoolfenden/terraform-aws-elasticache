@@ -10,6 +10,7 @@ resource "aws_elasticache_replication_group" "example" {
   auth_token                    = var.auth_token
   at_rest_encryption_enabled    = true
   transit_encryption_enabled    = true
+  kms_key_id                    = var.kms_key_id
 }
 
 variable "replication_group" {
