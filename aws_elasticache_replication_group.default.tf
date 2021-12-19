@@ -12,21 +12,3 @@ resource "aws_elasticache_replication_group" "example" {
   transit_encryption_enabled    = true
   kms_key_id                    = var.kms_key_id
 }
-
-variable "replication_group" {
-  default = {
-    automatic_failover_enabled    = true
-    availability_zones            = ["us-west-2a", "us-west-2b"]
-    replication_group_id          = "tf-rep-group-1"
-    replication_group_description = "test description"
-    node_type                     = "cache.m4.large"
-    number_cache_clusters         = 2
-    parameter_group_name          = "default.redis3.2"
-    port                          = 6379
-  }
-}
-
-variable "auth_token" {
-  type        = string
-  description = "(optional) describe your variable"
-}

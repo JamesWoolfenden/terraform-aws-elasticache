@@ -81,9 +81,10 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_auth_token"></a> [auth\_token](#input\_auth\_token) | (optional) describe your variable | `string` | n/a | yes |
 | <a name="input_cluster"></a> [cluster](#input\_cluster) | n/a | `map(any)` | <pre>{<br>  "cluster_id": "cluster-example",<br>  "engine": "memcached",<br>  "node_type": "cache.m4.large",<br>  "num_cache_nodes": 2,<br>  "parameter_group_name": "default.memcached1.4",<br>  "port": 11211,<br>  "snapshot_retention_limit": "5"<br>}</pre> | no |
-| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(string)` | n/a | yes |
 | <a name="input_es_subnet_group_name"></a> [es\_subnet\_group\_name](#input\_es\_subnet\_group\_name) | es\_subnet\_group\_name | `string` | `"tf-test-cache-subnet"` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | n/a | `any` | n/a | yes |
+| <a name="input_parameter_group"></a> [parameter\_group](#input\_parameter\_group) | n/a | <pre>object({<br>    name   = string<br>    family = string<br>  })</pre> | <pre>{<br>  "family": "redis2.8",<br>  "name": "cache-params"<br>}</pre> | no |
 | <a name="input_replication_group"></a> [replication\_group](#input\_replication\_group) | n/a | `map` | <pre>{<br>  "automatic_failover_enabled": true,<br>  "availability_zones": [<br>    "us-west-2a",<br>    "us-west-2b"<br>  ],<br>  "node_type": "cache.m4.large",<br>  "number_cache_clusters": 2,<br>  "parameter_group_name": "default.redis3.2",<br>  "port": 6379,<br>  "replication_group_description": "test description",<br>  "replication_group_id": "tf-rep-group-1"<br>}</pre> | no |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | n/a | `list(any)` | <pre>[<br>  ""<br>]</pre> | no |
 

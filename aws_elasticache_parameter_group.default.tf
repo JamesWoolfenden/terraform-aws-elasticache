@@ -1,6 +1,6 @@
 resource "aws_elasticache_parameter_group" "default" {
-  name   = "cache-params"
-  family = "redis2.8"
+  name   = var.parameter_group.name
+  family = var.parameter_group.family
 
   parameter {
     name  = "activerehashing"
