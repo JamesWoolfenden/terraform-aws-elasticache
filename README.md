@@ -31,7 +31,7 @@ module "elasticache" {
 memcache vert scaling is destructive
 
 - just changing and reapply instance type
-memcache scale out is adding nodes
+  memcache scale out is adding nodes
 - can it be automated?
 
 Memcache
@@ -51,16 +51,18 @@ create a memcache
 create a redis
 
 with scaling?
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| Name                                             | Version |
+| ------------------------------------------------ | ------- |
+| <a name="provider_aws"></a> [aws](#provider_aws) | n/a     |
 
 ## Modules
 
@@ -68,29 +70,30 @@ No modules.
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [aws_elasticache_cluster.cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster) | resource |
-| [aws_elasticache_parameter_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_parameter_group) | resource |
+| Name                                                                                                                                                   | Type     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| [aws_elasticache_cluster.cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster)                     | resource |
+| [aws_elasticache_parameter_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_parameter_group)     | resource |
 | [aws_elasticache_replication_group.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_replication_group) | resource |
-| [aws_elasticache_subnet_group.elasticache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_subnet_group) | resource |
+| [aws_elasticache_subnet_group.elasticache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_subnet_group)       | resource |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_auth_token"></a> [auth\_token](#input\_auth\_token) | (optional) describe your variable | `string` | n/a | yes |
-| <a name="input_cluster"></a> [cluster](#input\_cluster) | n/a | `map(any)` | <pre>{<br>  "cluster_id": "cluster-example",<br>  "engine": "memcached",<br>  "node_type": "cache.m4.large",<br>  "num_cache_nodes": 2,<br>  "parameter_group_name": "default.memcached1.4",<br>  "port": 11211,<br>  "snapshot_retention_limit": "5"<br>}</pre> | no |
-| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(string)` | n/a | yes |
-| <a name="input_es_subnet_group_name"></a> [es\_subnet\_group\_name](#input\_es\_subnet\_group\_name) | es\_subnet\_group\_name | `string` | `"tf-test-cache-subnet"` | no |
-| <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | n/a | `any` | n/a | yes |
-| <a name="input_parameter_group"></a> [parameter\_group](#input\_parameter\_group) | n/a | <pre>object({<br>    name   = string<br>    family = string<br>  })</pre> | <pre>{<br>  "family": "redis2.8",<br>  "name": "cache-params"<br>}</pre> | no |
-| <a name="input_replication_group"></a> [replication\_group](#input\_replication\_group) | n/a | `map` | <pre>{<br>  "automatic_failover_enabled": true,<br>  "availability_zones": [<br>    "us-west-2a",<br>    "us-west-2b"<br>  ],<br>  "node_type": "cache.m4.large",<br>  "number_cache_clusters": 2,<br>  "parameter_group_name": "default.redis3.2",<br>  "port": 6379,<br>  "replication_group_description": "test description",<br>  "replication_group_id": "tf-rep-group-1"<br>}</pre> | no |
-| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | n/a | `list(any)` | <pre>[<br>  ""<br>]</pre> | no |
+| Name                                                                                          | Description                                        | Type                                                             | Default                                                                                                                                                                                                                                                                                                                                                                    | Required |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------: |
+| <a name="input_auth_token"></a> [auth_token](#input_auth_token)                               | (optional) describe your variable                  | `string`                                                         | n/a                                                                                                                                                                                                                                                                                                                                                                        |   yes    |
+| <a name="input_cluster"></a> [cluster](#input_cluster)                                        | n/a                                                | `map(any)`                                                       | <pre>{<br> "cluster_id": "cluster-example",<br> "engine": "memcached",<br> "node_type": "cache.m4.large",<br> "num_cache_nodes": 2,<br> "parameter_group_name": "default.memcached1.4",<br> "port": 11211,<br> "snapshot_retention_limit": "5"<br>}</pre>                                                                                                                  |    no    |
+| <a name="input_common_tags"></a> [common_tags](#input_common_tags)                            | This is to help you add tags to your cloud objects | `map(string)`                                                    | n/a                                                                                                                                                                                                                                                                                                                                                                        |   yes    |
+| <a name="input_es_subnet_group_name"></a> [es_subnet_group_name](#input_es_subnet_group_name) | es_subnet_group_name                               | `string`                                                         | `"tf-test-cache-subnet"`                                                                                                                                                                                                                                                                                                                                                   |    no    |
+| <a name="input_kms_key_id"></a> [kms_key_id](#input_kms_key_id)                               | n/a                                                | `any`                                                            | n/a                                                                                                                                                                                                                                                                                                                                                                        |   yes    |
+| <a name="input_parameter_group"></a> [parameter_group](#input_parameter_group)                | n/a                                                | <pre>object({<br> name = string<br> family = string<br> })</pre> | <pre>{<br> "family": "redis2.8",<br> "name": "cache-params"<br>}</pre>                                                                                                                                                                                                                                                                                                     |    no    |
+| <a name="input_replication_group"></a> [replication_group](#input_replication_group)          | n/a                                                | `map`                                                            | <pre>{<br> "automatic_failover_enabled": true,<br> "availability_zones": [<br> "us-west-2a",<br> "us-west-2b"<br> ],<br> "node_type": "cache.m4.large",<br> "number_cache_clusters": 2,<br> "parameter_group_name": "default.redis3.2",<br> "port": 6379,<br> "replication_group_description": "test description",<br> "replication_group_id": "tf-rep-group-1"<br>}</pre> |    no    |
+| <a name="input_subnet_ids"></a> [subnet_ids](#input_subnet_ids)                               | n/a                                                | `list(any)`                                                      | <pre>[<br> ""<br>]</pre>                                                                                                                                                                                                                                                                                                                                                   |    no    |
 
 ## Outputs
 
 No outputs.
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
@@ -113,7 +116,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright � 2019-2021 James Woolfenden
+Copyright � 2019-2022 James Woolfenden
 
 ## License
 
