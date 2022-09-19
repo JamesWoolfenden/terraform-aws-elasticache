@@ -114,16 +114,24 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
+                "elasticache:CreateCacheCluster",
                 "elasticache:CreateCacheParameterGroup",
                 "elasticache:CreateCacheSubnetGroup",
+                "elasticache:CreateReplicationGroup",
+                "elasticache:DeleteCacheCluster",
                 "elasticache:DeleteCacheParameterGroup",
                 "elasticache:DeleteCacheSubnetGroup",
+                "elasticache:DeleteReplicationGroup",
+                "elasticache:DescribeCacheClusters",
                 "elasticache:DescribeCacheParameterGroups",
                 "elasticache:DescribeCacheParameters",
                 "elasticache:DescribeCacheSubnetGroups",
+                "elasticache:DescribeReplicationGroups",
                 "elasticache:ListTagsForResource",
+                "elasticache:ModifyCacheCluster",
                 "elasticache:ModifyCacheParameterGroup",
-                "elasticache:ModifyCacheSubnetGroup"
+                "elasticache:ModifyCacheSubnetGroup",
+                "elasticache:ModifyReplicationGroup"
             ],
             "Resource": "*"
         }
