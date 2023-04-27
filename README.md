@@ -1,6 +1,6 @@
 # terraform-aws-elasticache
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-elasticache/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-elasticache)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-elasticache/workflows/Verify/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-elasticache)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-elasticache.svg)](https://github.com/JamesWoolfenden/terraform-aws-elasticache/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-elasticache.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-elasticache/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
@@ -133,7 +133,9 @@ resource "aws_iam_policy" "terraform_pike" {
                 "elasticache:ModifyCacheSubnetGroup",
                 "elasticache:ModifyReplicationGroup"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
@@ -163,7 +165,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2022 James Woolfenden
+Copyright © 2019-2023 James Woolfenden
 
 ## License
 
