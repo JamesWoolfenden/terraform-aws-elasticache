@@ -136,6 +136,17 @@ resource "aws_iam_policy" "terraform_pike" {
             "Resource": [
                 "*"
             ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole",
+                "iam:PutRolePolicy"
+            ],
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
